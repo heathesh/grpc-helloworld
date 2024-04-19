@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/heathesh/grpc-helloworld/healthcheck";
+
+package healthcheck;
+
+service HealthCheck {
+  rpc Ping (PingRequest) returns (PingResponse) {}
+}
+
+message PingRequest {
+}
+
+message PingResponse {
+  string status = 1;
+  string message = 2;
+}
